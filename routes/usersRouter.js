@@ -8,5 +8,4 @@ router.get('/', (req, res) => {
 
 router.post('/register', registerUser);
 
-
 module.exports = router;

@@ -1,4 +1,5 @@
 const express = require('express');
+const indexRouter = require('./routes/index');
 const app = express();
 require('dotenv').config();
 const expressSession = require('express-session');
@@ -24,9 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
+app.use('/', indexRouter)
 app.use('/owners', ownersRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+
 
 app.get('/', (req, res) => {
     const error = "" // Or any error message you want to display

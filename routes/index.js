@@ -11,4 +11,4 @@ router.get('/shop', isLoggedIn, function (req, res) {
     res.render("shop");
 });
 
-modulele.exports = router;
+module.exports = router;
